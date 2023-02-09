@@ -6,7 +6,7 @@ const { query } = require("express");
 
 router.get('/',async (req,res,next) => {
     try{
-        const results =await db.query('SELECT * FROM companies');
+        const results = await db.query('SELECT * FROM companies');
         return res.json( { companies: results.rows });
     }catch(e){
         next(e);
